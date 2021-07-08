@@ -1,0 +1,19 @@
+mat-toolbar {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+  color: rgba(219, 108, 17, 0.733);
+  background-color:  rgba(209, 191, 176, 0.733);
+}
+
+.icon-facebook {
+  position: absolute;
+  right: 1%;
+  margin-right: 2rem;
+}
+
+.icon-contacts {
+  position: absolute;
+  right: 1%;
+}

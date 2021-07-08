@@ -1,0 +1,52 @@
+<h2>Madeira Vendida</h2>
+
+<div *ngFor="let madeira of madeiras" style="float:left"> <!-- so consigo por 2 lado a lado com o float left-->
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div> <!-- FUNCIONA MAS TEM BUG <img mat-card-avatar mat-card-image src="{{madeira.imagem}}" style: background-size="cover" >-->
+    <mat-card-title>{{madeira.nome}}</mat-card-title> <!-- <div mat-card-avatar class="example-header-image"></div>-->
+    <mat-card-subtitle>{{madeira.preco | currency:'EUR':'symbol' }} </mat-card-subtitle>
+  </mat-card-header>
+  <img class="images" mat-card-image src="{{madeira.imagem}}"> <!--
+    <img [src]="vehicle.imageUrl"> CARREGUEI MAL O LINK NO JSON, CORRIGIR ISSO E DÁ -->
+  <mat-card-content>
+    <p>
+      {{madeira.descricao}}
+    </p>
+      </mat-card-content>
+  <mat-card-actions>
+    <button *ngIf="madeira.isDisponivel == 1 " mat-raised-button type="button" class="cor" (click)="openModal(template)" ><strong>Encomende Já!!</strong> </button> <!-- POP PARA ENTRAR EM CONTACTO-->
+    <alert  *ngIf="madeira.isDisponivel == 0" type="warning"> <!-- clean code= this.text = data ? 'opened' : 'closed';  -->
+      <strong>Aviso!</strong> O produto encontra-se indisponível de momento.
+    </alert>
+  </mat-card-actions>
+</mat-card>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">ENCOMENDAS!</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Para encomendas, ou dúvidas, por favor ligue para o número  <strong>"PT"(+351)<mat-icon  color="warn" display="flex" >phone</mat-icon> 939658744</strong>
+  </div>
+</ng-template>
+
+<!-- Tenho de meter a nogueira em ultimo da lista, porque dá bug no display cards-->
+
+<!--<carousel [itemsPerSlide]="itemsPerSlide"
+          [singleSlideOffset]="false"
+          [interval]=0
+          [indicatorsByChunk]="true">
+  <slide *ngFor="let slide of slides; let index=index">
+    <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+    <div class="carousel-caption">
+      <h4>Slide {{index}}</h4>
+    </div>
+  </slide>
+</carousel> -->
+
+<!-- trabalhar com o service -->

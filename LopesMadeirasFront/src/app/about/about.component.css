@@ -1,0 +1,17 @@
+.mapa {
+  width: 1300px;
+  height: 600px;
+}
+
+h4 {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contactos li {
+  display: inline-block;
+  margin-right: 31%;
+  text-align: center;
+}
+

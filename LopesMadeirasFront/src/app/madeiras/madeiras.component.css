@@ -1,0 +1,23 @@
+.example-card {
+  max-width: 450px;
+  max-height: 550px;
+  margin-left: 45px;
+  margin-right: 45px;
+  margin-bottom: 15px;
+  float: left;
+    }
+
+
+.example-header-image {
+  background-image: url('http://fotos.cybermadeira.com/plantas-florestais_01DCBH_1002524013.jpg');
+  background-size: cover;
+}
+
+.images {
+  height: 300px;
+  width: 100%;
+}
+
+.cor {
+    background-color: rgb(4, 155, 4);
+}
